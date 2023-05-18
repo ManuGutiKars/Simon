@@ -42,13 +42,14 @@ $(".btn").click(function() {
         }
         
     }    else {
-        var wrong = new Audio("./sounds/wrong.mp3");
-        wrong.play();
+        playSound("wrong");
         $("body").addClass("game-over");
+        $("#level-title").text("Game Over, pulsa cualquier tecla para empezar de nuevo");
+
         setTimeout(function () {
             $("body").removeClass("game-over");
         }, 200)
-        $("#level-title").text("Game Over, pulsa cualquier tecla para empezar de nuevo")
+       
         startOver();
     
     }
